@@ -1,0 +1,53 @@
+erDiagram
+    USER ||--|| CART : "has"
+    USER {
+        int user_id PK
+        string username
+        string email
+        string password
+        string role
+        datetime created_at
+    }
+
+    CART ||--o{ CART_ITEM : "contains"
+    CART {
+        int cart_id PK
+        int user_id FK
+        datetime created_at
+        decimal total_price
+    }
+
+    CART_ITEM {
+        int cart_item_id PK
+        int cart_id FK
+        int product_id FK
+        int quantity
+        decimal price
+    }
+
+    PRODUCT {
+        int product_id PK
+        string name
+        string category
+        decimal price
+        int stock_quantity
+        string description
+    }
+
+    ORDER ||--|| USER : "placed by"
+    ORDER {
+        int order_id PK
+        int user_id FK
+        datetime order_date
+        decimal total_price
+        string status
+    }
+
+    ORDER ||--o{ ORDER_ITEM : "includes"
+    ORDER_ITEM {
+        int order_item_id PK
+        int order_id FK
+        int product_id FK
+        int quantity
+        decimal price
+    }
