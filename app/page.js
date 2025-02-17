@@ -6,6 +6,7 @@ import { Search, Menu } from 'lucide-react'
 import { useState } from 'react';
 import cn from 'classnames';
 import { Button } from "@/components/ui/button";
+import { useRef } from 'react';
 
 import {
   NavigationMenu,
@@ -16,10 +17,10 @@ import {
 } from "@/components/ui/navigation-menu"
 
 const slides = [
-  { id: 1, image: '/images/carousel1.jpeg', alt: 'Slide 1' },
-  { id: 2, image: '/images/carousel2.jpeg', alt: 'Slide 2' },
-  { id: 3, image: '/images/carousel3.jpeg', alt: 'Slide 3' },
-  { id: 4, image: '/images/carousel4.jpeg', alt: 'Slide 4' },
+  { id: 1, image: '/images/carousel1.jpg', alt: 'Slide 1' },
+  { id: 2, image: '/images/carousel2.jpg', alt: 'Slide 2' },
+  { id: 3, image: '/images/carousel3.jpg', alt: 'Slide 3' },
+  { id: 4, image: '/images/carousel4.jpg', alt: 'Slide 4' },
   { id: 5, image: '/images/carousel5.jpeg', alt: 'Slide 5' },
 ]
 
@@ -34,6 +35,13 @@ export default function Page() {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const bottomRef = useRef(null); // reference to the bottom of the page
+
+  // Function to handle the button click and scroll to the bottom
+  const handleScrollToBottom = () => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="bg-white text-black">
       <header className="bg-white text-black relative">
@@ -42,7 +50,7 @@ export default function Page() {
             <div className="flex items-center justify-between py-4">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/logoJoy.jpeg?height=40&width=120"
+                  src="/images/logoJoyOk.png?height=40&width=120"
                   alt="Joy Ubuzima Logo"
                   width={120}
                   height={40}
@@ -59,7 +67,7 @@ export default function Page() {
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
                         <div className="space-y-3">
                           <h3 className="font-bold text-lg">Joy Ubuzima</h3>
-                          <p className="text-sm text-gray-500">Discover our iconic brand and its offerings</p>
+                          <p className="text-sm text-gray-500">Discover our iconic brand and its offerings"</p>
                         </div>
                         <div>
                           <h4 className="font-semibold mb-2">Joy Ubuzima Natural Booster</h4>
@@ -177,14 +185,21 @@ export default function Page() {
                   <span className="sr-only">Menu</span>
                 </Button>
               </div>
+              <div className="pl-10">
+                <button 
+                  onClick={handleScrollToBottom} // Attach the click handler
+                  className="h-[60px] w-[100px] bg-white hover:bg-red-600 hover:text-white text-black shadow-lg">Leave a comment</button>
+              </div>
             </div>
           </NavigationMenu>
+
+          
         </div>
       </header>
 
       <main>
   {/* Carousel Section */}
-  <div className="relative overflow-hidden">
+  <div className="relative overflow-hidden" style={{ height: '1000px' }}>
     <div
       className="flex transition-transform duration-500 ease-in-out"
       style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -195,7 +210,7 @@ export default function Page() {
             src={slide.image}
             alt={slide.alt}
             width={1920}
-            height={600}
+            height={400}
             className="w-full object-cover"
           />
         </div>
@@ -241,21 +256,21 @@ export default function Page() {
       <h2 className="text-3xl font-bold text-center mb-8">Featured Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <Image src="/images/naturalBooster.jpeg?height=200&width=300" alt="Joy Ubuzima Natural Booster" width={300} height={200} className="w-full" />
+          <Image src="/images/image1.jpg?height=200&width=300" alt="Joy Ubuzima Natural Booster" width={300} height={200} className="w-full" />
           <div className="p-4">
             <h3 className="font-semibold text-lg mb-2">Joy Ubuzima Natural Booster</h3>
             <p className="text-gray-600">Enhance your energy naturally with our signature blend.</p>
           </div>
         </div>
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <Image src="/images/joyAloe.jpeg?height=200&width=300" alt="Joy Ubuzima Aloe Refresh" width={300} height={200} className="w-full" />
+          <Image src="/images/image2.jpg?height=200&width=300" alt="Joy Ubuzima Aloe Refresh" width={300} height={200} className="w-full" />
           <div className="p-4">
             <h3 className="font-semibold text-lg mb-2">Joy Ubuzima Aloe Refresh</h3>
             <p className="text-gray-600">Revitalize your day with the soothing power of aloe.</p>
           </div>
         </div>
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <Image src="/images/joyGuavaBliss.jpeg?height=200&width=300" alt="Joy Ubuzima Guava Bliss" width={300} height={200} className="w-full" />
+          <Image src="/images/image3.jpg?height=200&width=300" alt="Joy Ubuzima Guava Bliss" width={300} height={200} className="w-full" />
           <div className="p-4">
             <h3 className="font-semibold text-lg mb-2">Joy Ubuzima Guava Bliss</h3>
             <p className="text-gray-600">Experience tropical delight with our guava-infused drink.</p>
@@ -271,7 +286,7 @@ export default function Page() {
       <h2 className="text-3xl font-bold text-center mb-8">About Joy Ubuzima</h2>
       <div className="flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-6 md:mb-0">
-          <Image src="/images/logoJoy.jpeg?height=400&width=600" alt="About Joy Ubuzima" width={600} height={400} className="rounded-lg shadow-md" />
+          <Image src="/images/logoJoyOk.png?height=400&width=600" alt="About Joy Ubuzima" width={600} height={400} className="rounded-lg shadow-md" />
         </div>
         <div className="md:w-1/2 md:pl-8">
           <p className="text-gray-600 mb-4">
@@ -285,6 +300,9 @@ export default function Page() {
       </div>
     </div>
   </section>
+
+  {/* The bottom of the page */}
+  <div ref={bottomRef}/>
 </main>
 
       <footer className="bg-[#F40009] text-white">
@@ -327,8 +345,25 @@ export default function Page() {
                 123 Joy Ubuzima St., Kigali, Rwanda
               </p>
               <p className="text-sm">Email: support@joyubuzima.com</p>
-              <p className="text-sm">Phone: +250 123 456 789</p>
+              <p className="text-sm">Phone: +250 791 901 793</p>
             </div>
+
+            <div>
+            <h3 className="text-lg font-semibold">Leave a comment about our product</h3>
+            <div class="space-y-3">
+               <textarea placeholder="Type your comment..."
+                 class="rounded-[20px] h-[100px] w-full border border-gray-300 px-4 py-2 focus:ring focus:ring-red-400 focus:outline-none resize-none text-black"></textarea>
+    
+               <button class="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition duration-300">
+                 Submit Comment
+               </button>
+            </div>
+
+
+
+
+            </div>
+
           </div>
         </div>
       </footer>
