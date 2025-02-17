@@ -17,10 +17,10 @@ import {
 } from "@/components/ui/navigation-menu"
 
 const slides = [
-  { id: 1, image: '/images/carousel1.jpg', alt: 'Slide 1' },
-  { id: 2, image: '/images/carousel2.jpg', alt: 'Slide 2' },
-  { id: 3, image: '/images/carousel3.jpg', alt: 'Slide 3' },
-  { id: 4, image: '/images/carousel4.jpg', alt: 'Slide 4' },
+  { id: 1, image: '/images/carousel1.jpeg', alt: 'Slide 1' },
+  { id: 2, image: '/images/carousel2.jpeg', alt: 'Slide 2' },
+  { id: 3, image: '/images/carousel3.jpeg', alt: 'Slide 3' },
+  { id: 4, image: '/images/carousel4.jpeg', alt: 'Slide 4' },
   { id: 5, image: '/images/carousel5.jpeg', alt: 'Slide 5' },
 ]
 
