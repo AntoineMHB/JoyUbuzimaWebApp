@@ -6,6 +6,7 @@ import { Search, Menu } from 'lucide-react'
 import { useState } from 'react';
 import cn from 'classnames';
 import { Button } from "@/components/ui/button";
+import { useRef } from 'react';
 
 import {
   NavigationMenu,
@@ -32,6 +33,13 @@ export default function Page() {
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const bottomRef = useRef(null); // reference to the bottom of the page
+
+  // Function to handle the button click and scroll to the bottom
+  const handleScrollToBottom = () => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -177,8 +185,15 @@ export default function Page() {
                   <span className="sr-only">Menu</span>
                 </Button>
               </div>
+              <div className="pl-10">
+                <button 
+                  onClick={handleScrollToBottom} // Attach the click handler
+                  className="h-[60px] w-[100px] bg-white hover:bg-red-600 hover:text-white text-black shadow-lg">Leave a comment</button>
+              </div>
             </div>
           </NavigationMenu>
+
+          
         </div>
       </header>
 
@@ -285,6 +300,9 @@ export default function Page() {
       </div>
     </div>
   </section>
+
+  {/* The bottom of the page */}
+  <div ref={bottomRef}/>
 </main>
 
       <footer className="bg-[#F40009] text-white">
@@ -329,6 +347,23 @@ export default function Page() {
               <p className="text-sm">Email: support@joyubuzima.com</p>
               <p className="text-sm">Phone: +250 123 456 789</p>
             </div>
+
+            <div>
+            <h3 className="text-lg font-semibold">Leave a comment about our product</h3>
+            <div class="space-y-3">
+               <textarea placeholder="Type your comment..."
+                 class="rounded-[20px] h-[100px] w-full border border-gray-300 px-4 py-2 focus:ring focus:ring-red-400 focus:outline-none resize-none text-black"></textarea>
+    
+               <button class="bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-600 transition duration-300">
+                 Submit Comment
+               </button>
+            </div>
+
+
+
+
+            </div>
+
           </div>
         </div>
       </footer>
