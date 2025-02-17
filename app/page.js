@@ -199,7 +199,7 @@ export default function Page() {
 
       <main>
   {/* Carousel Section */}
-  <div className="relative overflow-hidden">
+  <div className="relative overflow-hidden" style={{ height: '1000px' }}>
     <div
       className="flex transition-transform duration-500 ease-in-out"
       style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -210,7 +210,7 @@ export default function Page() {
             src={slide.image}
             alt={slide.alt}
             width={1920}
-            height={100}
+            height={400}
             className="w-full object-cover"
           />
         </div>
@@ -256,21 +256,21 @@ export default function Page() {
       <h2 className="text-3xl font-bold text-center mb-8">Featured Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <Image src="/images/naturalBooster.jpeg?height=200&width=300" alt="Joy Ubuzima Natural Booster" width={300} height={200} className="w-full" />
+          <Image src="/images/image1.jpg?height=200&width=300" alt="Joy Ubuzima Natural Booster" width={300} height={200} className="w-full" />
           <div className="p-4">
             <h3 className="font-semibold text-lg mb-2">Joy Ubuzima Natural Booster</h3>
             <p className="text-gray-600">Enhance your energy naturally with our signature blend.</p>
           </div>
         </div>
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <Image src="/images/joyAloe.jpeg?height=200&width=300" alt="Joy Ubuzima Aloe Refresh" width={300} height={200} className="w-full" />
+          <Image src="/images/image2.jpg?height=200&width=300" alt="Joy Ubuzima Aloe Refresh" width={300} height={200} className="w-full" />
           <div className="p-4">
             <h3 className="font-semibold text-lg mb-2">Joy Ubuzima Aloe Refresh</h3>
             <p className="text-gray-600">Revitalize your day with the soothing power of aloe.</p>
           </div>
         </div>
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <Image src="/images/joyGuavaBliss.jpeg?height=200&width=300" alt="Joy Ubuzima Guava Bliss" width={300} height={200} className="w-full" />
+          <Image src="/images/image3.jpg?height=200&width=300" alt="Joy Ubuzima Guava Bliss" width={300} height={200} className="w-full" />
           <div className="p-4">
             <h3 className="font-semibold text-lg mb-2">Joy Ubuzima Guava Bliss</h3>
             <p className="text-gray-600">Experience tropical delight with our guava-infused drink.</p>
