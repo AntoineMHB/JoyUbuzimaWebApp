@@ -59,7 +59,7 @@ export default function Page() {
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
                         <div className="space-y-3">
                           <h3 className="font-bold text-lg">Joy Ubuzima</h3>
-                          <p className="text-sm text-gray-500">Discover our iconic brand and its offerings</p>
+                          <p className="text-sm text-gray-500">Discover our iconic brand and its offerings"</p>
                         </div>
                         <div>
                           <h4 className="font-semibold mb-2">Joy Ubuzima Natural Booster</h4>
@@ -195,7 +195,7 @@ export default function Page() {
             src={slide.image}
             alt={slide.alt}
             width={1920}
-            height={600}
+            height={100}
             className="w-full object-cover"
           />
         </div>
