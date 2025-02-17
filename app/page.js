@@ -17,10 +17,10 @@ import {
 } from "@/components/ui/navigation-menu"
 
 const slides = [
-  { id: 1, image: '/images/carousel1.jpeg', alt: 'Slide 1' },
-  { id: 2, image: '/images/carousel2.jpeg', alt: 'Slide 2' },
-  { id: 3, image: '/images/carousel3.jpeg', alt: 'Slide 3' },
-  { id: 4, image: '/images/carousel4.jpeg', alt: 'Slide 4' },
+  { id: 1, image: '/images/carousel1.jpg', alt: 'Slide 1' },
+  { id: 2, image: '/images/carousel2.jpg', alt: 'Slide 2' },
+  { id: 3, image: '/images/carousel3.jpg', alt: 'Slide 3' },
+  { id: 4, image: '/images/carousel4.jpg', alt: 'Slide 4' },
   { id: 5, image: '/images/carousel5.jpeg', alt: 'Slide 5' },
 ]
 
@@ -50,7 +50,7 @@ export default function Page() {
             <div className="flex items-center justify-between py-4">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/logoJoy.jpeg?height=40&width=120"
+                  src="/images/logoJoyOk.png?height=40&width=120"
                   alt="Joy Ubuzima Logo"
                   width={120}
                   height={40}
@@ -286,7 +286,7 @@ export default function Page() {
       <h2 className="text-3xl font-bold text-center mb-8">About Joy Ubuzima</h2>
       <div className="flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-6 md:mb-0">
-          <Image src="/images/logoJoy.jpeg?height=400&width=600" alt="About Joy Ubuzima" width={600} height={400} className="rounded-lg shadow-md" />
+          <Image src="/images/logoJoyOk.png?height=400&width=600" alt="About Joy Ubuzima" width={600} height={400} className="rounded-lg shadow-md" />
         </div>
         <div className="md:w-1/2 md:pl-8">
           <p className="text-gray-600 mb-4">
@@ -345,7 +345,7 @@ export default function Page() {
                 123 Joy Ubuzima St., Kigali, Rwanda
               </p>
               <p className="text-sm">Email: support@joyubuzima.com</p>
-              <p className="text-sm">Phone: +250 123 456 789</p>
+              <p className="text-sm">Phone: +250 791 901 793</p>
             </div>
 
             <div>
